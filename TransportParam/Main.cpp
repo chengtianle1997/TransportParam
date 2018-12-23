@@ -1,6 +1,8 @@
 #include "iostream"
 #include "cmdline.h"
+#include "string.h"
 
+using namespace std;
 typedef unsigned int UINT;
 
 int main(int argc, char *argv[]) {
@@ -16,7 +18,7 @@ int main(int argc, char *argv[]) {
 
 	//					long name	s-name	description					mandatory	default_val						extra constrain
 	//COM port params
-	 args.add<UINT>     ("printf-i",     'i',   "",                      false,         0,                   cmdline::range(1, 115200));
+	 args.add<string>     ("printf-i",     'i',   "",                      false,        "");
 	 args.add<UINT>	    ("printf-l",	 'l',   "",						 false,			0,					cmdline::range(1, 115200));
 	 args.add<UINT>     ("printf-m",     'm',   "",                      false,			0,					cmdline::range(1, 115200));
      args.add<UINT>		("printf-w",	 'w',	"",						 false,			0,					cmdline::range(1, 115200));
@@ -35,7 +37,7 @@ int main(int argc, char *argv[]) {
 
 	if (args.exist("printf-i"))
 	{
-		printf("i= %d\n", args.get<UINT>("printf-i"));
+		printf("i= %s\n", args.get<string>("printf-i"));
 	}
 	else
 		printf("Did not input i\n");
