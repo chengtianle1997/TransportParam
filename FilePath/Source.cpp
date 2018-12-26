@@ -6,16 +6,21 @@
 
 using namespace std;
 
+int Devnum = 0;
+const char* filepath="D:\\data";
+
 int main()
 {
-	const char* defaultPath = "D:\\database";
+	/*const char* defaultPath = "D:\database\\test";
 	const char* folderPath = "\\testFolder";
 	char finalpath[100];
 	sprintf(finalpath, "%s%s", defaultPath, folderPath);
-	printf("%s", finalpath);
+	printf("%s", finalpath);*/
 
+	char finalpath [200];
+	sprintf(finalpath, "%s\\Camera%d_Image", filepath, Devnum);
 
-	CreateDirectory(defaultPath, NULL);
+	CreateDirectory(filepath, NULL);
 	CreateDirectory(finalpath, NULL);
 	// flag ? true ??????
 
